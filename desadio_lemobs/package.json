@@ -1,0 +1,8 @@
+{
+  "name": "desafio",
+  "version": "0.0.1",
+  "description": "Meu primeiro app em socket.io",
+  "dependencies": {
+    "socket.io": "^1.5.1"
+  }
+}

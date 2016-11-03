@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script src=/socket.io/socket.io.js></script>
+    <script>
+    var socket = io('http://localhost:3000');
+//    socket.on('visits', function(visitas){
+//      document.getElementById('visitas').innerHTML = visitas;
+//    });
+    socket.on('consul', function(consultas){
+     socket.on('numero',function(n){
+      if(n == 1){
+        document.getElementById('consulta').innerHTML = "Número total de alunos é" + consultas['total'];
+      }else if(n == 2){
+        document.getElementById('consulta').innerHTML = "Média das notas é " + consultas['mnotas'];
+      }else if(n == 3){
+      
+        document.getElementById('consulta').innerHTML += consultas['bairro'] + " " + consultas['alunos'] + '<br/>';
+      }else if(n == 4){
+          document.getElementById('consulta').innerHTML += consultas['bairro'] + " " +consultas['media'] + '<br/>';
+        
+         
+      }
+     });
+    });
+
+    
+    </script>
+  </head>
+  <body>
+    <p></p>
+    <p>Consulta: <span id="consulta"></span></p>
+    
+    
+  </body>
+</html>
